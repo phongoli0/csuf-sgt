@@ -23,11 +23,23 @@ class App extends React.Component {
       });
   }
 
+  getAverage() {
+    const gradeInfo = this.state.grades;
+    let newTotal = 0;
+    for (let grade of gradeInfo) {
+      newTotal += grade.grade;
+    }
+    const average = newTotal / gradeInfo.length;
+    const total = average.toFixed(0);
+    return total;
+  }
+
   render() {
+    const newAverage = this.getAverage();
     return (
       <div>
-        <Header />
-        <GradeTable grades={this.state.grades}/>
+        <Header average = {newAverage}/>
+        <GradeTable grades = {this.state.grades}/>
       </div>
     );
   }
