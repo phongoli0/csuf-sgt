@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Grade(props) {
+
   return (
     <tr>
       <td>{props.name}</td>
