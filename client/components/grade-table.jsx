@@ -6,10 +6,9 @@ function GradeTable(props) {
   const grade = props.grades.map(grade => {
     return (
       <Grade
-        key={grade.id}
-        name={grade.name}
-        course = {grade.course}
-        grade = {grade.grade}
+        grade = {grade}
+        key = {grade.id}
+        onClicked = {props.onClicked}
       />
     );
   });
