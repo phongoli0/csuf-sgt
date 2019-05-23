@@ -45,7 +45,6 @@ class App extends React.Component {
       method: 'DELETE'
     })
       .then(() => {
-      // let oldGrades = [...this.state.grades];
         let grades = this.state.grades.filter(grade => grade.id !== id);
         this.setState({ grades });
       });
