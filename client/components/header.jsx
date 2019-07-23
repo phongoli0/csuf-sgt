@@ -3,7 +3,8 @@ import { Badge } from 'reactstrap';
 
 function Header(props) {
   return (
-    <div className={'row'}>
+    <div className= "row header">
+      <img src="images/tuffy.png" className="logo"></img>
       <h1 className={'col-sm-8'}>Student Grade Table</h1>
       <h2>Average <Badge color="secondary">{props.average}</Badge></h2>
     </div>
