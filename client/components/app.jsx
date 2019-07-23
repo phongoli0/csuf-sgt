@@ -65,8 +65,8 @@ class App extends React.Component {
     const newAverage = this.getAverage();
     return (
       <div>
-        <Header average = {newAverage}/>
-        <GradeTable grades = {this.state.grades} onClicked={this.deleteGrade}/>
+        <Header average={newAverage}/>
+        <GradeTable grades={this.state.grades} onClicked={this.deleteGrade}/>
         <GradeForm onSubmit={this.addGrade}/>
       </div>
     );
