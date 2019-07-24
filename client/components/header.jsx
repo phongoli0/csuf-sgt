@@ -1,13 +1,12 @@
 import React from 'react';
+import { Badge } from 'reactstrap';
 
 function Header(props) {
   return (
-    <div className={'row'}>
-      <h1 className={'col-sm-8'}>Student Grade Table</h1>
-      <h2 className={'col-sm-4'}> Average:
-        <span className="badge badge-secondary"> {props.average}
-        </span>
-      </h2>
+    <div className= "header row">
+      <img src="images/tuffy.png" className="logo"></img>
+      <div className="col-sm-7 title">CSUF Grade Table</div>
+      <div className="average col-sm">Average:<Badge className="badge" color="secondary">{props.average}</Badge></div>
     </div>
   );
 }
