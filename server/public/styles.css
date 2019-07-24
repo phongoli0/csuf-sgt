@@ -1,13 +1,45 @@
 body{
     height: 100vh;
-    padding: 0,.3em,.5em,.3em;
+    background-color: #fffefe;
 }
 .header{
-    height: 20%;
     background-color: #093864;
     color: aliceblue;
+    font-family: roboto;
+}
+.bottom{
+    margin-top: 1em;
 }
 .logo{
-    width: 5%;
-    padding-left: 1em;
+    width: 6em;
+    padding: .3em 0 .3em 1em;
+}
+.title{
+    font-size: 3em;
+    padding-top: .1em;
+}
+.average{
+    font-size: 2em;
+    text-align: center;
+    padding-top: 1%;
+}
+.table{
+    text-align: center;
+    font-size: 16px;
+}
+.buttons{
+    text-align: center;
+    margin-top: .8em;
+}
+.addButton, .cancelButton{
+    margin-right: .2em;
+    font-size: larger;
+}
+.icon{
+    line-height: inherit;
+}
+@media (orientation: portrait) {
+    .logo{
+        display: none
+    }
 }

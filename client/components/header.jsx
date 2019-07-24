@@ -3,21 +3,12 @@ import { Badge } from 'reactstrap';
 
 function Header(props) {
   return (
-    <div className= "row header">
+    <div className= "header row">
       <img src="images/tuffy.png" className="logo"></img>
-      <h1 className={'col-sm-8'}>Student Grade Table</h1>
-      <h2>Average <Badge color="secondary">{props.average}</Badge></h2>
+      <div className="col-sm-7 title">CSUF Grade Table</div>
+      <div className="average col-sm">Average:<Badge className="badge" color="secondary">{props.average}</Badge></div>
     </div>
   );
 }
 
 export default Header;
-
-// return (
-//   <div className={'row'}>
-//     <h1 className={'col-sm-8'}>Student Grade Table</h1>
-//     <h2 className={'col-sm-4'}> Average:
-//       <span className="badge badge-secondary"> {props.average}</span>
-//     </h2>
-//   </div>
-// );

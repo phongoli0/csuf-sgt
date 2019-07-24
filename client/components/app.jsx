@@ -58,6 +58,9 @@ class App extends React.Component {
     }
     const average = newTotal / gradeInfo.length;
     const total = average.toFixed(0);
+    if (isNaN(total)) {
+      return 'N/A';
+    }
     return total;
   }
 
@@ -65,9 +68,15 @@ class App extends React.Component {
     const newAverage = this.getAverage();
     return (
       <div>
-        <Header average={newAverage}/>
-        <GradeTable grades={this.state.grades} onClicked={this.deleteGrade}/>
-        <GradeForm onSubmit={this.addGrade}/>
+        <div className="container-fluid">
+          <Header average = {newAverage}/>
+        </div>
+        <div className="container-fluid bottom">
+          <div className="row">
+            <GradeTable grades = {this.state.grades} onClicked={this.deleteGrade}/>
+            <GradeForm onSubmit={this.addGrade}/>
+          </div>
+        </div>
       </div>
     );
   }
