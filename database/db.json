@@ -5,30 +5,6 @@
       "course": "Web Development",
       "grade": "100",
       "id": 1
-    },
-    {
-      "name": "Ivan",
-      "course": "Web Development",
-      "grade": "65",
-      "id": 2
-    },
-    {
-      "name": "James Tang",
-      "course": "Web Development",
-      "grade": "85",
-      "id": 3
-    },
-    {
-      "name": "Andre",
-      "course": "Web Development",
-      "grade": "78",
-      "id": 4
-    },
-    {
-      "name": "Jimmy",
-      "course": "Web Development",
-      "grade": "75",
-      "id": 5
     }
   ]
 }

@@ -67,8 +67,8 @@ class App extends React.Component {
   render() {
     const newAverage = this.getAverage();
     return (
-      <div>
-        <div className="container-fluid">
+      <div className="wrapper">
+        <div className="container-fluid top">
           <Header average = {newAverage}/>
         </div>
         <div className="container-fluid bottom">
