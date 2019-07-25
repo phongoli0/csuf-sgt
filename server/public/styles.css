@@ -1,11 +1,14 @@
 body{
-    height: 100vh;
+
     background-color: #fffefe;
 }
 .header{
     background-color: #093864;
     color: aliceblue;
     font-family: roboto;
+}
+.wrapper{
+    min-height: 95vh;
 }
 .bottom{
     margin-top: 1em;
@@ -38,8 +41,31 @@ body{
 .icon{
     line-height: inherit;
 }
+footer {
+    bottom: 0;
+    position: sticky;
+    width: 100%;
+    height: 5vh;
+    background-color: #093864;
+    color: aliceblue;
+    font-family: roboto;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: .5em;
+ }
 @media (orientation: portrait) {
     .logo{
         display: none
+    }
+    .title{
+        text-align: center;
+        font-size: 2.5em;
+        padding: 0;
+    }
+    .average{
+        padding: 0;
+    }
+    footer{
+        font-size: .8em;
     }
 }
