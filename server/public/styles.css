@@ -38,12 +38,24 @@ body{
     margin-right: .2em;
     font-size: larger;
 }
+.addButton{
+    background-color: #093864;
+    border-color: #093864;
+}
+.cancelButton{
+    background-color: #E06C00;
+    border-color: #E06C00;
+}
+.deleteButton{
+    background-color: #ca2a3a;
+    border-color: #ca2a3a;
+    font-size: smaller;
+}
 .icon{
     line-height: inherit;
 }
 footer {
     bottom: 0;
-    position: sticky;
     width: 100%;
     height: 5vh;
     background-color: #093864;
@@ -51,7 +63,7 @@ footer {
     font-family: roboto;
     text-align: center;
     vertical-align: middle;
-    padding-top: .5em;
+    font-size: small;
  }
 @media (orientation: portrait) {
     .logo{
@@ -64,8 +76,5 @@ footer {
     }
     .average{
         padding: 0;
-    }
-    footer{
-        font-size: .8em;
     }
 }
