@@ -1,4 +1,5 @@
 import React from 'react';
+import EditGradeContext from '../context/edit-grade-context';
 import { Button } from 'reactstrap';
 
 function Grade(props) {
@@ -17,6 +18,19 @@ function Grade(props) {
           }}>
           Delete
         </Button>{''}
+        <EditGradeContext.Consumer>
+          { context =>
+            <button className="btn btn-info" onClick={event => {
+              event.preventDefault();
+              context.loadToForm({
+                id: props.grade.id,
+                name: props.grade.name,
+                course: props.grade.course,
+                grade: props.grade.grade
+              });
+            }} >EDIT</button>
+          }
+        </EditGradeContext.Consumer>
       </td>
     </tr>
   );
