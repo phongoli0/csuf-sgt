@@ -23,10 +23,12 @@ class GradeForm extends React.Component {
   // }
 
   handleSubmit(event) {
-    if (this.state.grade < 100 &&
+    if (
+      this.state.grade < 100 &&
       this.state.grade >= 0 &&
       this.state.name.length >= 1 &&
-      this.state.course.length >= 1) {
+      this.state.course.length >= 1
+    ) {
       event.preventDefault();
       this.props.onSubmit(this.state);
       this.setState({
@@ -34,8 +36,7 @@ class GradeForm extends React.Component {
         name: '',
         course: '',
         grade: ''
-      }
-      );
+      });
     }
   }
 
@@ -114,28 +115,72 @@ class GradeForm extends React.Component {
         <div>
           <FormGroup>
             <InputGroup>
-              <InputGroupAddon addonType="prepend" className="input-group-text fas fa-user icon"></InputGroupAddon>
-              <Input type="text" className="form-control" placeholder="Name" name='name' value={this.state.name} onChange={event => { this.nameValidate(event, 'name'); }}></Input>
+              <InputGroupAddon
+                addonType="prepend"
+                className="input-group-text fas fa-user icon"
+              />
+              <Input
+                type="text"
+                className="form-control"
+                placeholder="Name"
+                name="name"
+                value={this.state.name}
+                onChange={event => {
+                  this.nameValidate(event, 'name');
+                }}
+              />
             </InputGroup>
           </FormGroup>
           <FormGroup>
             <InputGroup>
-              <InputGroupAddon addonType="prepend" className="input-group-text fas fa-list-alt icon"></InputGroupAddon>
-              <Input type="text" className="form-control" placeholder="Course" name='course' value={this.state.course} onChange={event => { this.courseValidate(event, 'course'); } }></Input>
+              <InputGroupAddon
+                addonType="prepend"
+                className="input-group-text fas fa-list-alt icon"
+              />
+              <Input
+                type="text"
+                className="form-control"
+                placeholder="Course"
+                name="course"
+                value={this.state.course}
+                onChange={event => {
+                  this.courseValidate(event, 'course');
+                }}
+              />
             </InputGroup>
           </FormGroup>
           <FormGroup>
             <InputGroup>
-              <InputGroupAddon addonType="prepend" className="input-group-text fas fa-graduation-cap icon cap"></InputGroupAddon>
-              <Input type="number" className="form-control" placeholder="Grade" name='grade'value={this.state.grade} onChange={event => { this.gradeValidate(event, 'grade'); }}></Input>
+              <InputGroupAddon
+                addonType="prepend"
+                className="input-group-text fas fa-graduation-cap icon cap"
+              />
+              <Input
+                type="number"
+                className="form-control"
+                placeholder="Grade"
+                name="grade"
+                value={this.state.grade}
+                onChange={event => {
+                  this.gradeValidate(event, 'grade');
+                }}
+              />
             </InputGroup>
             <div>{this.state.message}</div>
           </FormGroup>
         </div>
         <FormGroup>
           <div className="buttons">
-            <button type='submit' className="btn btn-success addButton">{ this.state.id === 0 ? 'Add' : 'Update' }</button>
-            <button type='reset' className="btn btn-danger cancelButton" onClick={this.handleReset} >Cancel</button>
+            <button type="submit" className="btn btn-success addButton">
+              {this.state.id === 0 ? 'Add' : 'Update'}
+            </button>
+            <button
+              type="reset"
+              className="btn btn-danger cancelButton"
+              onClick={this.handleReset}
+            >
+              Cancel
+            </button>
           </div>
         </FormGroup>
       </Form>

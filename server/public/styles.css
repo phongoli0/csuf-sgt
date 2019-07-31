@@ -55,8 +55,16 @@ body{
     border-color: #093864;
 }
 .cancelButton:hover{
-    background-color: #E06C00;
-    border-color: #E06C00;
+    background-color: #d36804;
+    border-color: #d36804;
+}
+.addButton:active{
+    background-color: #093864;
+    border-color: #093864;
+}
+.cancelButton:active{
+    background-color: #d36804;
+    border-color: #d36804;
 }
 .deleteButton, .editButton{
     font-size: smaller;
@@ -66,7 +74,23 @@ body{
     background-color: #607d8b;
     border-color: #607d8b;
 }
+.editButton:hover{
+    background-color: #607d8b;
+    border-color: #607d8b;
+}
 .deleteButton{
+    background-color: #ca2a3a;
+    border-color: #ca2a3a;
+}
+.deleteButton:hover{
+    background-color: #ca2a3a;
+    border-color: #ca2a3a;
+}
+.editButton:active{
+    background-color: #607d8b;
+    border-color: #607d8b;
+}
+.deleteButton:active{
     background-color: #ca2a3a;
     border-color: #ca2a3a;
 }
