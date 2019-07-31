@@ -13,7 +13,7 @@ class App extends React.Component {
         id: 0,
         name: '',
         course: '',
-        grade: 0
+        grade: ''
       }
     };
     this.getAllGrades = this.getAllGrades.bind(this);
@@ -47,7 +47,7 @@ class App extends React.Component {
           id: 0,
           name: '',
           course: '',
-          grade: 0
+          grade: ''
         };
         this.setState({ grades: allGrades, gradeToBeEdited });
       });
@@ -94,9 +94,8 @@ class App extends React.Component {
           id: 0,
           name: '',
           course: '',
-          grade: 0
+          grade: ''
         };
-
         this.setState({ grades, gradeToBeEdited });
       });
   }

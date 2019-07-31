@@ -9,6 +9,19 @@ function Grade(props) {
       <td>{props.grade.course}</td>
       <td>{props.grade.grade}</td>
       <td>
+        <EditGradeContext.Consumer>
+          { context =>
+            <button className="btn btn-info editButton" onClick={event => {
+              event.preventDefault();
+              context.loadToForm({
+                id: props.grade.id,
+                name: props.grade.name,
+                course: props.grade.course,
+                grade: props.grade.grade
+              });
+            }} >Edit</button>
+          }
+        </EditGradeContext.Consumer>
         <Button
           className="deleteButton"
           color="danger"
@@ -18,19 +31,6 @@ function Grade(props) {
           }}>
           Delete
         </Button>{''}
-        <EditGradeContext.Consumer>
-          { context =>
-            <button className="btn btn-info" onClick={event => {
-              event.preventDefault();
-              context.loadToForm({
-                id: props.grade.id,
-                name: props.grade.name,
-                course: props.grade.course,
-                grade: props.grade.grade
-              });
-            }} >EDIT</button>
-          }
-        </EditGradeContext.Consumer>
       </td>
     </tr>
   );
