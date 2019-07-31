@@ -29,14 +29,16 @@ class GradeForm extends React.Component {
       name: '',
       course: '',
       grade: 0
-    });
+    }
+    );
   }
 
   handleReset(event) {
     this.setState({
+      id: 0,
       name: '',
       course: '',
-      grade: ''
+      grade: 0
     });
   }
 

@@ -70,11 +70,10 @@ class App extends React.Component {
   deleteGrade(id) {
     fetch('/api/grades/' + id, {
       method: 'DELETE'
-    })
-      .then(() => {
-        let grades = this.state.grades.filter(grade => grade.id !== id);
-        this.setState({ grades });
-      });
+    }).then(() => {
+      let grades = this.state.grades.filter(grade => grade.id !== id);
+      this.setState({ grades });
+    });
   }
 
   updateGrade(grade) {
@@ -83,10 +82,13 @@ class App extends React.Component {
       body: JSON.stringify(grade),
       headers: {
         'Content-Type': 'application/json'
-      } })
+      }
+    })
       .then(res => res.json())
       .then(updatedGrade => {
-        const grades = this.state.grades.map(grade => grade.id === updatedGrade.id ? updatedGrade : grade);
+        const grades = this.state.grades.map(grade =>
+          grade.id === updatedGrade.id ? updatedGrade : grade
+        );
         // const avgGrade = this.getAverageGrade(grades);
         const gradeToBeEdited = {
           id: 0,
@@ -97,7 +99,6 @@ class App extends React.Component {
 
         this.setState({ grades, gradeToBeEdited });
       });
-
   }
 
   submitGrade(grade) {
@@ -108,16 +109,16 @@ class App extends React.Component {
     }
   }
 
-  cancelEditGrade() {
-    this.setState({
-      gradeToBeEdited: {
-        id: 0,
-        name: '',
-        course: '',
-        grade: 0
-      }
-    });
-  }
+  // cancelEditGrade() {
+  //   this.setState({
+  //     gradeToBeEdited: {
+  //       id: 0,
+  //       name: "",
+  //       course: "",
+  //       grade: 0
+  //     }
+  //   });
+  // }
 
   loadGradeToBeEditedToForm(gradeToBeEdited) {
     this.setState({ gradeToBeEdited });
@@ -128,7 +129,7 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <div className="container-fluid top">
-          <Header average = {newAverage}/>
+          <Header average={newAverage} />
         </div>
         <div className="container-fluid bottom">
           <div className="row">
@@ -139,13 +140,13 @@ class App extends React.Component {
               }}
             >
               <GradeTable
-                grades = {this.state.grades}
+                grades={this.state.grades}
                 onClicked={this.deleteGrade}
               />
               <GradeForm
                 onSubmit={this.submitGrade.bind(this)}
                 loadedGrade={this.state.gradeToBeEdited}
-                cancelEditGrade={this.cancelEditGrade.bind(this)}
+                // cancelEditGrade={this.cancelEditGrade.bind(this)}
               />
             </EditGradeContext.Provider>
           </div>
