@@ -24,7 +24,7 @@ class GradeForm extends React.Component {
 
   handleSubmit(event) {
     if (
-      this.state.grade < 100 &&
+      this.state.grade <= 100 &&
       this.state.grade >= 0 &&
       this.state.name.length >= 1 &&
       this.state.course.length >= 1

@@ -7,20 +7,17 @@ body{
     font-family: 'Graduate', cursive;
     text-transform: uppercase;
 }
-.averageBadge{
-    margin-left: .2em;
-}
 .wrapper{
     min-height: 95vh;
 }
-.bottom{
-    margin-top: 1em;
-}
 .logo{
-    padding: .3%;
+    width: 6%;
+    height: 100%;
+    padding: .25%;
+    margin: auto;
 }
 .title{
-    font-size: 4em;
+    font-size: 3em;
     margin: auto;
 }
 .average{
@@ -29,7 +26,10 @@ body{
     margin: auto;
 }
 .badge{
-    margin-left: .3em;
+    margin-left: 1%;
+}
+.bottom{
+    margin-top: 1%;
 }
 .table{
     text-align: center;
@@ -39,8 +39,12 @@ body{
     text-align: center;
 }
 .addButton, .cancelButton{
-    margin-right: .2em;
+    margin-right: 1%;
     font-size: larger;
+}
+.deleteButton, .editButton{
+    font-size: smaller;
+    margin-right: 1%;
 }
 .addButton{
     background-color: #093864;
@@ -65,10 +69,6 @@ body{
 .cancelButton:active{
     background-color: #d36804;
     border-color: #d36804;
-}
-.deleteButton, .editButton{
-    font-size: smaller;
-    margin-right: .2em;
 }
 .editButton{
     background-color: #607d8b;
@@ -102,42 +102,19 @@ body{
 }
 footer {
     bottom: 0;
-    /* width: 100%; */
     height: 5vh;
     background-color: #093864;
     color: aliceblue;
     text-align: center;
-    vertical-align: middle;
     font-size: small;
  }
-@media (orientation: portrait) {
-    .logo{
-        display: none
-    }
+
+ @media (max-width: 990px) {
     .title{
-        text-align: center;
-        font-size: 2.5em;
-        padding: 0;
-    }
-    .average{
-        padding: 0;
-    }
-    .editButton{
-        margin-bottom: .1em;
-    }
-}
-@media (max-width: 990px) {
-    .logo{
-        padding: .3%;
-    }
-    .title{
-        font-size: 2.5em;
+        font-size: 1.5em;
     }
     .average{
         font-size: 1.5em;
-    }
-    .editButton{
-        margin-bottom: .1em;
     }
     .editButton, .deleteButton{
         font-size: 10px;
@@ -146,3 +123,28 @@ footer {
         font-size: 12px;
     }
 }
+
+@media (max-height: 320px) {
+    .title{
+        text-align: center;
+    }
+}
+
+@media (orientation: portrait) {
+    .logo{
+        display: none
+    }
+    .title{
+        text-align: center;
+        font-size: 1.5em;
+        padding: 0;
+    }
+    .average{
+        padding: 0;
+        font-size: 1.5em;
+    }
+    .editButton{
+        margin-bottom: 5%;
+    }
+}
+
