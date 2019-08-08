@@ -54,39 +54,15 @@ body{
     background-color: #E06C00;
     border-color: #E06C00;
 }
-.cancelButton:hover{
+.cancelButton:hover, .cancelButton:active{
     background-color: #d36804;
     border-color: #d36804;
 }
-.addButton:active{
-    background-color: #093864;
-    border-color: #093864;
-}
-.cancelButton:active{
-    background-color: #d36804;
-    border-color: #d36804;
-}
-.editButton{
+.editButton, .editButton:hover, .editButton:active{
     background-color: #607d8b;
     border-color: #607d8b;
 }
-.editButton:hover{
-    background-color: #607d8b;
-    border-color: #607d8b;
-}
-.deleteButton{
-    background-color: #ca2a3a;
-    border-color: #ca2a3a;
-}
-.deleteButton:hover{
-    background-color: #ca2a3a;
-    border-color: #ca2a3a;
-}
-.editButton:active{
-    background-color: #607d8b;
-    border-color: #607d8b;
-}
-.deleteButton:active{
+.deleteButton, .deleteButton:hover, .deleteButton:active{
     background-color: #ca2a3a;
     border-color: #ca2a3a;
 }
@@ -104,7 +80,6 @@ footer {
     text-align: center;
     font-size: small;
  }
-
  @media (max-width: 990px) {
     .title{
         font-size: 1.5em;
@@ -119,13 +94,11 @@ footer {
         font-size: 12px;
     }
 }
-
 @media (max-height: 320px) {
     .title{
         text-align: center;
     }
 }
-
 @media (orientation: portrait) {
     .logo{
         display: none
