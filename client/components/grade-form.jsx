@@ -48,20 +48,6 @@ class GradeForm extends React.Component {
     });
   }
 
-  gradeValidate(event) {
-    if (this.state.grade <= 100 && this.state.grade > 0) {
-      this.setState({
-        [event.target.name]: event.target.value,
-        message: ''
-      });
-    } else {
-      this.setState({
-        [event.target.name]: event.target.value,
-        message: 'Must be between 0-100'
-      });
-    }
-  }
-
   nameValidate(event) {
     if (this.state.name.length >= 1) {
       this.setState({
@@ -86,6 +72,20 @@ class GradeForm extends React.Component {
       this.setState({
         [event.target.name]: event.target.value,
         message: 'Please enter a valid course'
+      });
+    }
+  }
+
+  gradeValidate(event) {
+    if (this.state.grade <= 100 && this.state.grade > 0) {
+      this.setState({
+        [event.target.name]: event.target.value,
+        message: ''
+      });
+    } else {
+      this.setState({
+        [event.target.name]: event.target.value,
+        message: 'Must be between 0-100'
       });
     }
   }

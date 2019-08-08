@@ -81,8 +81,7 @@ class App extends React.Component {
       body: JSON.stringify(grade),
       headers: {
         'Content-Type': 'application/json'
-      }
-    })
+      } })
       .then(res => res.json())
       .then(updatedGrade => {
         const grades = this.state.grades.map(
