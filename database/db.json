@@ -4,22 +4,15 @@
       "id": 4,
       "name": "Phong Truong",
       "course": "Web Development",
-      "grade": "100",
+      "grade": "99",
       "message": ""
     },
     {
       "id": 5,
       "name": "James Tang",
       "course": "Web Development",
-      "grade": "89",
-      "message": ""
-    },
-    {
-      "id": 7,
-      "name": "Andrew Ly",
-      "course": "Web Development",
       "grade": "100",
-      "message": ""
+      "message": "Must be between 0-100"
     }
   ]
 }

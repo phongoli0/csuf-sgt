@@ -46,17 +46,13 @@ body{
     font-size: smaller;
     margin-right: 1%;
 }
-.addButton{
+.addButton, .addButton:hover, .addButton:active, .addButton:focus{
     background-color: #093864;
     border-color: #093864;
 }
 .cancelButton{
     background-color: #E06C00;
     border-color: #E06C00;
-}
-.addButton:hover{
-    background-color: #093864;
-    border-color: #093864;
 }
 .cancelButton:hover{
     background-color: #d36804;
@@ -147,4 +143,3 @@ footer {
         margin-bottom: 5%;
     }
 }
-

@@ -11,16 +11,15 @@ class GradeForm extends React.Component {
       grade: '',
       message: ''
     };
-    // this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
 
-  // handleChange(event) {
-  // this.setState({
-  //   [event.target.name]: event.target.value
-  // });
-  // }
+  componentDidUpdate(prevProps) {
+    if (this.props.gradeToBeEdited.id !== prevProps.gradeToBeEdited.id) {
+      this.setState(this.props.gradeToBeEdited);
+    }
+  }
 
   handleSubmit(event) {
     if (
@@ -49,24 +48,10 @@ class GradeForm extends React.Component {
     });
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.loadedGrade.id !== prevProps.loadedGrade.id) {
-      this.setState({ ...this.props.loadedGrade });
-    }
-  }
-
-  // handleChange(event, tagName) {
-  //   const editGrade = { ...this.state.editGrade };
-  //   editGrade[ tagName ] = event.target.value;
-  //   this.setState({ ...editGrade });
-  // }
-
-  gradeValidate(event, tagName) {
+  gradeValidate(event) {
     if (this.state.grade <= 100 && this.state.grade > 0) {
-      const editGrade = { ...this.state.editGrade };
-      editGrade[tagName] = event.target.value;
       this.setState({
-        ...editGrade,
+        [event.target.name]: event.target.value,
         message: ''
       });
     } else {
@@ -77,12 +62,10 @@ class GradeForm extends React.Component {
     }
   }
 
-  nameValidate(event, tagName) {
+  nameValidate(event) {
     if (this.state.name.length >= 1) {
-      const editGrade = { ...this.state.editGrade };
-      editGrade[tagName] = event.target.value;
       this.setState({
-        ...editGrade,
+        [event.target.name]: event.target.value,
         message: ''
       });
     } else {
@@ -93,12 +76,10 @@ class GradeForm extends React.Component {
     }
   }
 
-  courseValidate(event, tagName) {
+  courseValidate(event) {
     if (this.state.course.length >= 1) {
-      const editGrade = { ...this.state.editGrade };
-      editGrade[tagName] = event.target.value;
       this.setState({
-        ...editGrade,
+        [event.target.name]: event.target.value,
         message: ''
       });
     } else {
@@ -126,7 +107,7 @@ class GradeForm extends React.Component {
                 name="name"
                 value={this.state.name}
                 onChange={event => {
-                  this.nameValidate(event, 'name');
+                  this.nameValidate(event);
                 }}
               />
             </InputGroup>
@@ -144,7 +125,7 @@ class GradeForm extends React.Component {
                 name="course"
                 value={this.state.course}
                 onChange={event => {
-                  this.courseValidate(event, 'course');
+                  this.courseValidate(event);
                 }}
               />
             </InputGroup>
@@ -162,7 +143,7 @@ class GradeForm extends React.Component {
                 name="grade"
                 value={this.state.grade}
                 onChange={event => {
-                  this.gradeValidate(event, 'grade');
+                  this.gradeValidate(event);
                 }}
               />
             </InputGroup>
