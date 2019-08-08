@@ -8,7 +8,8 @@ function GradeTable(props) {
       <Grade
         grade = {grade}
         key = {grade.id}
-        onClicked = {props.onClicked}
+        deleteGrade = {props.deleteGrade}
+        setEditing = {props.setEditing}
       />
     );
   });

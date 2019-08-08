@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './header';
 import GradeTable from './grade-table';
 import GradeForm from './grade-form';
-import EditGradeContext from '../context/edit-grade-context.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -86,10 +85,8 @@ class App extends React.Component {
     })
       .then(res => res.json())
       .then(updatedGrade => {
-        const grades = this.state.grades.map(grade =>
-          grade.id === updatedGrade.id ? updatedGrade : grade
-        );
-        // const avgGrade = this.getAverageGrade(grades);
+        const grades = this.state.grades.map(
+          grade => grade.id === updatedGrade.id ? updatedGrade : grade);
         const gradeToBeEdited = {
           id: 0,
           name: '',
@@ -100,6 +97,10 @@ class App extends React.Component {
       });
   }
 
+  setEditing(grade) {
+    this.setState({ gradeToBeEdited: grade });
+  }
+
   submitGrade(grade) {
     if (grade.id === 0) {
       this.addGrade(grade);
@@ -108,46 +109,25 @@ class App extends React.Component {
     }
   }
 
-  // cancelEditGrade() {
-  //   this.setState({
-  //     gradeToBeEdited: {
-  //       id: 0,
-  //       name: "",
-  //       course: "",
-  //       grade: 0
-  //     }
-  //   });
-  // }
-
-  loadGradeToBeEditedToForm(gradeToBeEdited) {
-    this.setState({ gradeToBeEdited });
-  }
-
   render() {
     const newAverage = this.getAverage();
     return (
       <div className="wrapper">
         <div className="container-fluid top">
-          <Header average={newAverage} />
+          <Header
+            average={newAverage} />
         </div>
         <div className="container-fluid bottom">
           <div className="row">
-            <EditGradeContext.Provider
-              value={{
-                grade: this.state.gradeToBeEdited,
-                loadToForm: this.loadGradeToBeEditedToForm.bind(this)
-              }}
-            >
-              <GradeTable
-                grades={this.state.grades}
-                onClicked={this.deleteGrade}
-              />
-              <GradeForm
-                onSubmit={this.submitGrade.bind(this)}
-                loadedGrade={this.state.gradeToBeEdited}
-                // cancelEditGrade={this.cancelEditGrade.bind(this)}
-              />
-            </EditGradeContext.Provider>
+            <GradeTable
+              grades={this.state.grades}
+              deleteGrade={this.deleteGrade.bind(this)}
+              setEditing={this.setEditing.bind(this)}
+            />
+            <GradeForm
+              onSubmit={this.submitGrade.bind(this)}
+              gradeToBeEdited={this.state.gradeToBeEdited}
+            />
           </div>
         </div>
       </div>
