@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup, InputGroupAddon, Input, Form, FormGroup } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input, Form, FormGroup, Button } from 'reactstrap';
 
 class GradeForm extends React.Component {
   constructor(props) {
@@ -22,21 +22,14 @@ class GradeForm extends React.Component {
   }
 
   handleSubmit(event) {
-    if (
-      this.state.grade <= 100 &&
-      this.state.grade >= 0 &&
-      this.state.name.length >= 1 &&
-      this.state.course.length >= 1
-    ) {
-      event.preventDefault();
-      this.props.onSubmit(this.state);
-      this.setState({
-        id: 0,
-        name: '',
-        course: '',
-        grade: ''
-      });
-    }
+    event.preventDefault();
+    this.props.onSubmit(this.state);
+    this.setState({
+      id: 0,
+      name: '',
+      course: '',
+      grade: ''
+    });
   }
 
   handleReset(event) {
@@ -91,6 +84,18 @@ class GradeForm extends React.Component {
   }
 
   render() {
+    let addButton;
+    if (
+      this.state.grade <= 100 &&
+      this.state.grade >= 0 &&
+      this.state.name.length >= 1 &&
+      this.state.course.length >= 1
+    ) {
+      addButton = <button className="btn btn-success addButton">
+        {this.state.id === 0 ? 'Add' : 'Update'}</button>;
+    } else {
+      addButton = <Button color="secondary" disabled className="btn addButton">Please fill out form</Button>;
+    }
     return (
       <Form onSubmit={this.handleSubmit} className="col-sm form">
         <div>
@@ -152,9 +157,7 @@ class GradeForm extends React.Component {
         </div>
         <FormGroup>
           <div className="buttons">
-            <button type="submit" className="btn btn-success addButton">
-              {this.state.id === 0 ? 'Add' : 'Update'}
-            </button>
+            {addButton}
             <button
               type="reset"
               className="btn btn-danger cancelButton"
