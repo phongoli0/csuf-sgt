@@ -84,10 +84,12 @@ class GradeForm extends React.Component {
   }
 
   render() {
+    let regex = new RegExp(/\d+/);
     let addButton;
     if (
       this.state.grade <= 100 &&
       this.state.grade >= 0 &&
+      regex.test(this.state.grade) &&
       this.state.name.length >= 1 &&
       this.state.course.length >= 1
     ) {
