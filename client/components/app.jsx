@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import GradeTable from './grade-table';
 import GradeForm from './grade-form';
+import { Row, Container } from 'reactstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -81,11 +82,13 @@ class App extends React.Component {
       body: JSON.stringify(grade),
       headers: {
         'Content-Type': 'application/json'
-      } })
+      }
+    })
       .then(res => res.json())
       .then(updatedGrade => {
-        const grades = this.state.grades.map(
-          grade => grade.id === updatedGrade.id ? updatedGrade : grade);
+        const grades = this.state.grades.map(grade =>
+          grade.id === updatedGrade.id ? updatedGrade : grade
+        );
         const gradeToBeEdited = {
           id: 0,
           name: '',
@@ -109,15 +112,14 @@ class App extends React.Component {
   }
 
   render() {
-    const newAverage = this.getAverage();
+    let newAverage = this.getAverage();
     return (
       <div className="wrapper">
-        <div className="container-fluid top">
-          <Header
-            average={newAverage} />
-        </div>
-        <div className="container-fluid bottom">
-          <div className="row">
+        <Container fluid className="top">
+          <Header average={newAverage} />
+        </Container>
+        <Container fluid className="bottom">
+          <Row className="row">
             <GradeTable
               grades={this.state.grades}
               deleteGrade={this.deleteGrade.bind(this)}
@@ -127,8 +129,8 @@ class App extends React.Component {
               onSubmit={this.submitGrade.bind(this)}
               gradeToBeEdited={this.state.gradeToBeEdited}
             />
-          </div>
-        </div>
+          </Row>
+        </Container>
       </div>
     );
   }

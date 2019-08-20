@@ -12,5 +12,5 @@ server.use(express.static(path.join(__dirname, 'public')));
 server.use('/api', endpoints);
 server.listen(PORT, () => {
   // eslint-disable-next-line no-console
-  console.log('JSON Server listening on port 3001\n');
+  console.log('JSON Server listening on port', PORT);
 });
