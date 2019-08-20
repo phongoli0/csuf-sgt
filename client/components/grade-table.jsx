@@ -1,6 +1,6 @@
 import React from 'react';
 import Grade from './grade';
-import { Table } from 'reactstrap';
+import { Table, Col } from 'reactstrap';
 
 function GradeTable(props) {
   const grade = props.grades.map(grade => {
@@ -14,7 +14,7 @@ function GradeTable(props) {
     );
   });
   return (
-    <div className="col-sm-8 table">
+    <Col sm="8" className="table">
       <Table hover striped bordered>
         <thead>
           <tr>
@@ -28,7 +28,7 @@ function GradeTable(props) {
           {grade}
         </tbody>
       </Table>
-    </div>
+    </Col>
   );
 }
 

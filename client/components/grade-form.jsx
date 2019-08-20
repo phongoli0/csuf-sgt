@@ -84,7 +84,7 @@ class GradeForm extends React.Component {
   }
 
   render() {
-    let regex = new RegExp(/\d+/);
+    let regex = /\d+/;
     let addButton;
     if (
       this.state.grade <= 100 &&
@@ -93,13 +93,13 @@ class GradeForm extends React.Component {
       this.state.name.length >= 1 &&
       this.state.course.length >= 1
     ) {
-      addButton = <button className="btn btn-success addButton">
-        {this.state.id === 0 ? 'Add' : 'Update'}</button>;
+      addButton = <Button color="success" className="addButton">
+        {this.state.id === 0 ? 'Add' : 'Update'}</Button>;
     } else {
-      addButton = <Button color="secondary" disabled className="btn addButton">Please fill out form</Button>;
+      addButton = <Button color="secondary" disabled className="addButton">Please fill out form</Button>;
     }
     return (
-      <Form onSubmit={this.handleSubmit} className="col-sm form">
+      <Form onSubmit={this.handleSubmit} className="col-sm form" onReset={this.handleReset}>
         <div>
           <FormGroup>
             <InputGroup>
@@ -160,13 +160,13 @@ class GradeForm extends React.Component {
         <FormGroup>
           <div className="buttons">
             {addButton}
-            <button
+            <Button
+              color="danger"
               type="reset"
-              className="btn btn-danger cancelButton"
-              onClick={this.handleReset}
+              className="cancelButton"
             >
               Cancel
-            </button>
+            </Button>
           </div>
         </FormGroup>
       </Form>

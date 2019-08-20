@@ -8,10 +8,10 @@ function Grade(props) {
       <td>{props.grade.course}</td>
       <td>{props.grade.grade}</td>
       <td>
-        <button
-          className="btn btn-info editButton"
+        <Button
+          className="editButton"
+          color="info"
           onClick={event => {
-            event.preventDefault();
             props.setEditing({
               id: props.grade.id,
               name: props.grade.name,
@@ -20,17 +20,15 @@ function Grade(props) {
           }}
         >
           Edit
-        </button>
+        </Button>
         <Button
           className="deleteButton"
           color="danger"
           onClick={event => {
-            event.preventDefault();
             props.deleteGrade(props.grade.id);
           }}>
           Delete
         </Button>
-        {''}
       </td>
     </tr>
   );
