@@ -43,13 +43,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(grade => {
         const allGrades = this.state.grades.concat(grade);
-        const gradeToBeEdited = {
-          id: 0,
-          name: '',
-          course: '',
-          grade: ''
-        };
-        this.setState({ grades: allGrades, gradeToBeEdited });
+        this.setState({ grades: allGrades });
       });
   }
 
@@ -89,13 +83,7 @@ class App extends React.Component {
         const grades = this.state.grades.map(grade =>
           grade.id === updatedGrade.id ? updatedGrade : grade
         );
-        const gradeToBeEdited = {
-          id: 0,
-          name: '',
-          course: '',
-          grade: ''
-        };
-        this.setState({ grades, gradeToBeEdited });
+        this.setState({ grades });
       });
   }
 
