@@ -1,95 +1,42 @@
-# sgt-react
+# CSUF - SGT
+* Live Demo: __https://sgt.phongtruong.com__
 
-The Student Grade Table: Written in React
+![](sgt-demo.gif)
+<hr/>
 
-## Introduction
-
-For this project, you will be building a single-page React application that communicates with a server to manipulate data.
-
+CSUF-SGT is a full-stack, content management system. The app provides users with the ability to add grades to their gradebook, average up the grade, update the student's grade, and delete specific grade from the gradebook. The app was themed after my alma mater, California State University, Fullerton.
 ## Getting Started
-
-1. Fork this repository to your GitHub account and clone it to your local machine.
-2. Check out a `dev` branch and push it to `origin`.
-    ```bash
-    git push origin dev
-    ```
-3. Install all dependencies in `package.json` with NPM.
-    ```bash
-    npm install
-    ```
-
-## NPM Scripts
-
-- `dev` - Start Webpack Dev Server on port `3000` and JSON Server on port `3001`.
-- `build` - Run Webpack to build the React client into `server/public`.
-
-## Features
-
-- [User can view all grades.](features/user-can-view-all-grades.md)
-- [User can view the average grade.](features/user-can-view-the-average-grade.md)
-- [User can add a grade.](features/user-can-add-a-grade.md)
-- [User can delete a grade.](features/user-can-delete-a-grade.md)
-
-## Preview
-
-![SGT React](sgt-react.gif)
-
-## Server API
-
-#### `GET /api/grades`
-
-Responds with all recorded `grades`.
-
-##### Example Response Body
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Daniel Paschal",
-    "grade": 100,
-    "course": "Web Development"
-  },
-  {
-    "id": 2,
-    "name": "Scott Bowler",
-    "grade": 100,
-    "course": "Web Development"
-  }
-]
+### Initial Setup
+1. Fork this repo and clone your fork from the terminal.
 ```
-
-#### `POST /api/grades`
-
-Accepts a single `grade` object in the request body and inserts it into all `grades`. Responds with the inserted `grade`, including an auto-generated `id`.
-
-##### Example Request Body
-
-```json
-{
-  "name": "Tim Davis",
-  "grade": 50,
-  "course": "Web Development"
-}
+$ git clone https://github.com/phongoli0/csuf-sgt.git
 ```
-
-##### Example Response Body
-
-```json
-{
-  "id": 3,
-  "name": "Tim Davis",
-  "grade": 100,
-  "course": "Web Development"
-}
+2. Navigate into the cloned directory and install the necessary dependencies.
 ```
-
-#### `DELETE /api/grades/:id`
-
-Removes a `grade` from all recorded `grades`, given an `id` in the request URL. _e.g._ `/api/grades/3`
-
-##### Example Response Body
-
-```json
-{}
+$ npm install
 ```
+3. Start a dev environment with access to Apache2:
+    * Check that port is directed to ```3000```
+    * Check that the root directory of the server is set to the ```public``` folder
+4. Initiate the dev server
+```
+$ npm run dev
+```
+5. Go to ```localhost:3000``` and enjoy 😃
+
+## Contributing
+Please feel free to fork this repo, make changes, submit pull requests, and send suggestions to ptruong6@outlook.com to make this app better.
+
+## Built With
+* Front-End
+  * [JavaScript](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+  * [React.js](https://reactjs.org/)
+  * [Reactstrap](https://reactstrap.github.io): for desktop and mobile responsiveness
+* Back-End
+  * [Node.js](https://nodejs.org/en/)
+
+## License
+[MIT License](https://opensource.org/licenses/mit-license.php)
+
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
