@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'reactstrap';
 
 function Grade(props) {
   return (
@@ -8,27 +7,25 @@ function Grade(props) {
       <td>{props.grade.course}</td>
       <td>{props.grade.grade}</td>
       <td>
-        <Button
-          className="editButton"
-          color="info"
-          onClick={event => {
-            props.setEditing({
-              id: props.grade.id,
-              name: props.grade.name,
-              course: props.grade.course,
-              grade: props.grade.grade });
-          }}
-        >
-          Edit
-        </Button>
-        <Button
-          className="deleteButton"
-          color="danger"
-          onClick={event => {
-            props.deleteGrade(props.grade.id);
-          }}>
-          Delete
-        </Button>
+        <div className="tableButton">
+          <i
+            className="far fa-edit editButton"
+            onClick={event => {
+              props.setEditing({
+                id: props.grade.id,
+                name: props.grade.name,
+                course: props.grade.course,
+                grade: props.grade.grade });
+            }}
+          >
+          </i>
+          <i
+            className="far fa-trash-alt deleteButton"
+            onClick={event => {
+              props.deleteGrade(props.grade.id);
+            }}>
+          </i>
+        </div>
       </td>
     </tr>
   );

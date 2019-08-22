@@ -40,11 +40,20 @@ body{
 }
 .addButton, .cancelButton{
     margin-right: 1%;
-    font-size: larger;
 }
-.deleteButton, .editButton{
-    font-size: smaller;
-    margin-right: 1%;
+.tableButton{
+    margin: auto;
+}
+.editButton{
+    margin-right: 10%;
+    color: cornflowerblue;
+}
+.deleteButton{
+    color: #ca2c2c;
+}
+.editButton, .deleteButton{
+    font-size: larger;
+    cursor: pointer;
 }
 .addButton, .addButton:hover, .addButton:active, .addButton:focus{
     background-color: #093864;
@@ -57,14 +66,6 @@ body{
 .cancelButton:hover, .cancelButton:active{
     background-color: #d36804;
     border-color: #d36804;
-}
-.editButton, .editButton:hover, .editButton:active{
-    background-color: #607d8b;
-    border-color: #607d8b;
-}
-.deleteButton, .deleteButton:hover, .deleteButton:active{
-    background-color: #ca2a3a;
-    border-color: #ca2a3a;
 }
 .icon{
     line-height: inherit;
@@ -87,9 +88,6 @@ footer {
     .average{
         font-size: 1.5em;
     }
-    .editButton, .deleteButton{
-        font-size: 10px;
-    }
     .table{
         font-size: 12px;
     }
@@ -111,8 +109,5 @@ footer {
     .average{
         padding: 0;
         font-size: 1.5em;
-    }
-    .editButton{
-        margin-bottom: 5%;
     }
 }
