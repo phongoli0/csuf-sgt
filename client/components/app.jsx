@@ -103,11 +103,12 @@ class App extends React.Component {
     let newAverage = this.getAverage();
     return (
       <div className="wrapper">
-        <Container fluid className="top">
-          <Header average={newAverage} />
+        <Container fluid>
+          <Header average={newAverage}
+            className="mb-3"/>
         </Container>
         <Container fluid className="bottom">
-          <Row className="row">
+          <Row>
             <GradeTable
               grades={this.state.grades}
               deleteGrade={this.deleteGrade.bind(this)}
