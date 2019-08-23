@@ -99,7 +99,7 @@ class GradeForm extends React.Component {
       addButton = <Button color="secondary" disabled className="addButton">Please fill out form</Button>;
     }
     return (
-      <Form onSubmit={this.handleSubmit} className="col-sm form" onReset={this.handleReset}>
+      <Form onSubmit={this.handleSubmit} className="col-sm" onReset={this.handleReset}>
         <div>
           <FormGroup>
             <InputGroup>

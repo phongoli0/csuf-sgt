@@ -40,6 +40,7 @@ body{
 }
 .addButton, .cancelButton{
     margin-right: 1%;
+    margin-top: 1%;
 }
 .tableButton{
     margin: auto;
@@ -72,6 +73,9 @@ body{
 }
 .cap{
     font-size: .9em;
+}
+.footerText{
+    padding-top: .5%;
 }
 footer {
     bottom: 0;
