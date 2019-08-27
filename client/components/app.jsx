@@ -19,6 +19,7 @@ class App extends React.Component {
     this.getAllGrades = this.getAllGrades.bind(this);
     this.addGrade = this.addGrade.bind(this);
     this.deleteGrade = this.deleteGrade.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   componentDidMount() {
@@ -54,7 +55,7 @@ class App extends React.Component {
       newTotal += parseInt(grade.grade);
     }
     const average = newTotal / gradeInfo.length;
-    const total = average.toFixed(0);
+    const total = average.toFixed(2);
     if (isNaN(total)) {
       return 'N/A';
     }
@@ -94,9 +95,36 @@ class App extends React.Component {
   submitGrade(grade) {
     if (grade.id === 0) {
       this.addGrade(grade);
+      this.setState({
+        gradeToBeEdited: {
+          id: 0,
+          name: '',
+          course: '',
+          grade: ''
+        }
+      });
     } else {
       this.updateGrade(grade);
+      this.setState({
+        gradeToBeEdited: {
+          id: 0,
+          name: '',
+          course: '',
+          grade: ''
+        }
+      });
     }
+  }
+
+  handleReset(event) {
+    this.setState({
+      gradeToBeEdited: {
+        id: 0,
+        name: '',
+        course: '',
+        grade: ''
+      }
+    });
   }
 
   render() {
@@ -104,8 +132,7 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Container fluid>
-          <Header average={newAverage}
-            className="mb-3"/>
+          <Header average={newAverage} className="mb-3" />
         </Container>
         <Container fluid className="bottom">
           <Row>
@@ -117,6 +144,7 @@ class App extends React.Component {
             <GradeForm
               onSubmit={this.submitGrade.bind(this)}
               gradeToBeEdited={this.state.gradeToBeEdited}
+              onReset={this.handleReset.bind(this)}
             />
           </Row>
         </Container>

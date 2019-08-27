@@ -1,31 +1,17 @@
 {
   "grades": [
     {
-      "id": 4,
+      "id": 1,
       "name": "Phong Truong",
       "course": "Web Development",
       "grade": "100",
       "message": ""
     },
     {
-      "id": 5,
+      "id": 2,
       "name": "James Tang",
       "course": "Web Development",
-      "grade": "68",
-      "message": ""
-    },
-    {
-      "id": 6,
-      "name": "Ivan A",
-      "course": "Web Development",
-      "grade": "79",
-      "message": ""
-    },
-    {
-      "id": 7,
-      "name": "Andrew Ly",
-      "course": "Web Development",
-      "grade": "54",
+      "grade": "95",
       "message": ""
     }
   ]

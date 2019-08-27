@@ -28,7 +28,8 @@ class GradeForm extends React.Component {
       id: 0,
       name: '',
       course: '',
-      grade: ''
+      grade: '',
+      message: ''
     });
   }
 
@@ -37,7 +38,8 @@ class GradeForm extends React.Component {
       id: 0,
       name: '',
       course: '',
-      grade: ''
+      grade: '',
+      message: ''
     });
   }
 
@@ -98,8 +100,14 @@ class GradeForm extends React.Component {
     } else {
       addButton = <Button color="secondary" disabled className="addButton">Please fill out form</Button>;
     }
+    let editText;
+    if (this.state.id === 0) {
+      editText = 'form-control';
+    } else {
+      editText = 'form-control editText';
+    }
     return (
-      <Form onSubmit={this.handleSubmit} className="col-sm" onReset={this.handleReset}>
+      <Form onSubmit={this.handleSubmit} className="col-sm" onReset={this.props.onReset}>
         <div>
           <FormGroup>
             <InputGroup>
@@ -109,7 +117,7 @@ class GradeForm extends React.Component {
               />
               <Input
                 type="text"
-                className="form-control"
+                className={editText}
                 placeholder="Name"
                 name="name"
                 value={this.state.name}
@@ -127,7 +135,7 @@ class GradeForm extends React.Component {
               />
               <Input
                 type="text"
-                className="form-control"
+                className={editText}
                 placeholder="Course"
                 name="course"
                 value={this.state.course}
@@ -145,7 +153,7 @@ class GradeForm extends React.Component {
               />
               <Input
                 type="number"
-                className="form-control"
+                className={editText}
                 placeholder="Grade"
                 name="grade"
                 value={this.state.grade}
