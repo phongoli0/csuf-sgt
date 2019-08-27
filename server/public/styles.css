@@ -77,6 +77,19 @@ body{
 .footerText{
     padding-top: .5%;
 }
+.editText{
+    background-color: #32699c;
+    color: aliceblue;
+}
+.deleteModalBody{
+    text-align: center;
+}
+.deleteModalFooter{
+    margin: auto;
+}
+.modal-content{
+    top:25vh;
+}
 footer {
     bottom: 0;
     height: 5vh;
