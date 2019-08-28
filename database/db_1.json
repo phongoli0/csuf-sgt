@@ -1,0 +1,18 @@
+{
+  "grades": [
+    {
+      "id": 1,
+      "name": "Phong Truong",
+      "course": "Web Development",
+      "grade": "100",
+      "message": ""
+    },
+    {
+      "id": 2,
+      "name": "James Tang",
+      "course": "Web Development",
+      "grade": "95",
+      "message": ""
+    }
+  ]
+}
